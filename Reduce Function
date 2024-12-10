@@ -1,13 +1,13 @@
-Reduce Function:- It takes an array as input and gives a single valued as a output
-Syntax :- array.reduce(callback, initialValue);
+🎖️Reduce Function:- It takes an array as input and gives a single valued as a output
+💻Syntax :- array.reduce(callback, initialValue);
 
-const num=[1,2,3,4,5];
-
+💻const num=[1,2,3,4,5];
 const sum=num.reduce((initial,item)=> initial+item,0);
 console.log(sum);
 in the reducer function the return value become the initial value for the next iteration
 
-const people=[
+
+💻const people=[
 {name:"Kyle", age:25},
 {name :"John", age:24},
 {name :"Vivek", age:25},
@@ -24,7 +24,7 @@ console.log(result);
 
 Note :- The reduce function can take four parameters :- initial value, iterator value, index, array
 
-const num=[1,2,3,4,5];
+💻const num=[1,2,3,4,5];
 const sum=num.reduce((initial,item,index,array)=> {
 console.log(index)
 console.log(array)
@@ -32,7 +32,7 @@ return initial+item},0);
 console.log(sum);
 
 
-Note :-IF we do not pass the initial value to the reduce function then it will take the first value of the array as the initial value
+💻Note :-IF we do not pass the initial value to the reduce function then it will take the first value of the array as the initial value
 const num=[1,2,3,4,5];
 const sum=num.reduce((initial,item,index,array)=> {
 console.log(index)
