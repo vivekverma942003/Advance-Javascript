@@ -1,0 +1,22 @@
+🎖️🎖️ Filter function :- Creates a new instance of the shallow copy which contains all the elements which passes the condition of the filter method
+
+        const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+        const result = words.filter((word) => word.length > 6);
+        console.log(result);
+        // Expected output: Array ["exuberant", "destruction", "present"]
+
+    🎖️ It does not modify the original value of the array
+        const num=[1,2,3,4,5,6,6,7];
+        const nnum=num.filter((item)=>item>3);
+        console.log(nnum)
+
+ 🎖️🎖️Currying function :- It is used to break down a large function into smaller functions and pass the arguements one by one
+   💻  function add(x){
+    return function(y){
+        return function(z){
+            return x*y*z;
+        }
+    }
+}
+
+console.log(add(2)(3)(4));
