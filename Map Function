@@ -1,2 +1,28 @@
-MAP FUNCTION:-
+MAP FUNCTION:-The map function is used to apply callback function to each and every element of the array and return to a new array;
 
+💻const numbers = [1, 4, 9];
+const roots = numbers.map((num) => Math.sqrt(num));
+
+💻Using the parseInt method :- ["1", "2", "3"].map(parseInt);
+
+🎖️When nothing is returned in the map  function then it return the undefined value
+     💻 const numbers = [1, 2, 3, 4];
+        const filteredNumbers = numbers.map((num, index) => {
+        if (index < 3) {
+          return num;
+        }
+      });
+
+🎖️use cases of the map function
+  💻 const num=[1,2,3,4,5,6]
+      const newnum=num.map((item,index)=>item*2);
+      console.log(newnum);
+
+      function binary(x){
+        return x.toString(2);
+      }
+
+      const binarynum= num.map(binary);
+
+      console.log(binarynum)
+  
