@@ -1,1 +1,21 @@
- Debounce and 
+ 🎖️🎖️Debounce :-Debouncing is a technique that delays the execution of a function until a certain amount of time
+               has passed since the last event's occurrence. It's useful when you want the function to be called 
+               after a period  of inactivity, and it prevents rapid consecutive calls.
+
+   🎖️🎖️:-    In debouncing, the function is only executed after a specific delay since the last event's occurrence. 
+              If new events occur within the delay period, the timer is reset, and the function execution is further delayed.
+   🧑‍💻🧑‍💻Use Cases:-
+            Search Input: Avoid making API calls on every keystroke.
+            Window Resize: Improve performance by limiting the number of resize calculations.
+            Button Click: Prevent accidental multiple submissions.
+    
+
+  🎖️🎖️ Throttle:-
+         Throttling and debouncing are techniques used to control the rate at which a function is invoked, particularly in scenarios where frequent events
+         (like user interactions) can lead to excessive calls and potentially impact performance.
+         In throttling, the function is executed at a fixed interval. Even if the triggering event occurs more frequently, the function is invoked according
+         to the defined interval.
+  🧑‍💻🧑‍💻 Use Cases:
+                 Scroll Events
+                 Windwo Resize
+   
