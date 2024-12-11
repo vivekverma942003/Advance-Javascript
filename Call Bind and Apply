@@ -1,1 +1,93 @@
-Call():- 
+
+🎖️🎖️Bind():-The bind method is used to create a new function when that new function
+ when called it refers to the this keyword for the first arguement and other arguements are passed to the function 
+
+💻💻
+bind(thisArg, arg1, arg2, /* …, */ argN)
+🧑‍💻🧑‍💻 let info={
+    name:"Vivek Kumar Verma",
+    course:"B-Tech"
+}
+This is the parent function
+function printname(name, course){
+    console.log(this.name +" my course is " + this.course);
+    
+    console.log(name+ " my new course is "+this.course);
+}
+
+let result= printname.bind(info,"Vishal Kumar Verma","Pharma");
+Here the result becomes the new function returned by the bind method
+result();
+
+Note❤️ Bind aur call me ek difference hai k call function pass krte time hi invoke ho jata hai
+        but bind function turant invoke nhi hota h wo ek naya function me result store karwa deta h 
+        jab need hogi us naye function ko call ya invoke karwa lo
+
+
+
+Call():- This function is used to borrow function from the object or change the reference of the 
+         this keyword from one object to another object ..
+          
+
+Simple function :-  let info={
+                        name:"Vivek Kumar Verma",
+                        course:"B-Tech",
+                        branch:"CSE",
+                        age:26,
+                        printdetails:function(){
+                            return this.name +"and course is" +this.course;
+                        }
+                    }
+
+                    console.log(info.printdetails()); 
+
+
+                    HERE IS THE EXAMPLE OF THE CALL FUNCTION
+                      let info={
+                      name:"Vivek Kumar Verma",
+                      course:"B-Tech",
+                        branch:"CSE",
+                        age:26,
+                        printdetails:function(){
+                        return this.name +"and course is" +this.course;
+                        }
+                    }
+                    let info2={
+                          name:"Vishal Kumar Verma",
+                          course:"B-Tech",
+                          branch:"CSE-AIML",
+                          age:24,
+                    }
+                    console.log(info.printdetails.call(info2));
+
+❤️🧑‍💻🎖️ Here we can observe that the call function mainly used to change the reference of the this keyword from one object to another object
+        we can provide any number of arguement in the call function 
+let info={
+    name:"Vivek Kumar Verma",
+    course:"B-Tech",
+    branch:"CSE",
+    age:26,
+    
+}
+let printdetails=function(){
+        return this.name +"and course is" +this.course;
+    }
+let info2={
+    name:"Vishal Kumar Verma",
+    course:"B-Tech",
+    branch:"CSE-AIML",
+    age:24,
+}
+console.log(printdetails.call(info));
+
+
+APPLY():- This function works same as the call function the only difference is that it takes a single arguement after the object 
+          as the array list which can contains the n number of the data
+
+example code :-
+🧑‍💻💻  function sum(a, b, ...c) {
+  return a + b + c;
+}
+const args = [1, 2, 3];
+console.log(sum.apply(null, args)); // Output: 6
+
