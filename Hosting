@@ -1,0 +1,116 @@
+🧑‍💻🎖️Var():-
+
+The var varibales are hosted with a default value of undefined or only its declarations is hosted
+the value is not hosted..
+
+Let and const keywords are not hosted with any default values thats why they show reference error
+
+Working :- The main idea behind the hoisting is that the when we compiler the code
+      it allocates the memory to the every variable with default values like in the case of var
+      default values is undefined . which makes it accessible with undefined values before its execution
+      
+      Function are totally copied during the  memory allocation in execution context thats why they run 
+      smoothly in the code.
+
+    🧑‍💻🎖️**Understanding Variable Hoisting:**
+
+  In JavaScript, variables declared with the `var` keyword are hoisted, meaning they are allocated memory during the compilation phase.
+  However, their value is initialized to `undefined`, which allows them to be accessible before their actual declaration in the code.
+
+  On the other hand, variables declared with `let` and `const` are also hoisted, but they do not get a default value. 
+  As a result, attempting to use them before their declaration will lead to a reference error.
+
+  When it comes to functions, they are fully hoisted, which means they can be called before their actual definition in the code.
+  This is why functions run smoothly regardless of where they are placed in the code.
+
+  In summary, the key concept behind hoisting is that the JavaScript compiler allocates memory for variables and functions before executing the code, 
+  thus allowing access to variables declared with `var` (set to `undefined`) and full access to functions.
+
+
+*******************Code Examples of hoisting *******************
+
+  console.log(bar()); // What will this log?
+    var bar = function () {                                                                
+    return "Hi";
+    };
+    Output :- bar is not a function
+
+
+console.log(bar()); // What will this log?
+var bar = function () {
+  return "Hi";
+};
+
+  Output= Hi
+
+Example 3 :-   var a = 5;
+              function test() {
+                console.log(a);
+                var a = 10;
+            }
+            test();
+Output:= undefined
+
+Example 4 var a = 1;
+function test() {
+  console.log(a);
+}
+var a = 2;
+test();
+Output = 2;
+
+Example 5   var x = 10;
+            var x =30;
+
+            var x;
+            console.log(x);    OUTPUT=30;
+
+Example 6  for (var i = 0; i < 3; i++) {
+              setTimeout(() => console.log(i), 0);
+            }
+            OUTPUT= 3 3 3
+
+Example 7 for (let i = 0; i < 3; i++) {
+                setTimeout(() => console.log(i), 0);
+          }
+
+Output = 0 1 2
+
+Example 8 console.log(this) Output={}
+
+Example 9 :        console.log(a);
+                  var a = 10;
+                  function a() {}
+                  console.log(a);
+        Output = function, 10
+
+
+*******************Temporal dead zone*******************
+                The time period between entering the scope of a block (or function) and the actual line where the variable is declared.
+                During this period, the variable is considered to exist but is uninitialized.
+  
+                *Starts at Scope Entry
+                *Ends at Initialization
+                *ReferenceError: Any attempt to access a variable that is in the TDZ results in a ReferenceError, 
+                indicating that it cannot be accessed before initialization.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
