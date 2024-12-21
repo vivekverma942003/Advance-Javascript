@@ -1,0 +1,27 @@
+A function bind together with its lexical scope bundled together is called closure.
+simply Function apne aas pass k lexical scope ko yaad rakhte h jaha se wo aaye h loyal hote h 
+
+************************EXAMPLE******************
+function parent(){
+    var name ="Vivek";
+    
+    function child(){
+        console.log(name);
+    }
+    return child;
+}
+let z = parent();
+z();
+
+
+
+***************************🎖️🎖️*********************
+function parent(){
+    var name ="Vivek";
+    
+    function child(){
+        console.log(name);
+    }
+    return child();
+}
+parent()
