@@ -1,0 +1,21 @@
+Web Api:-
+WEb api are browser tools functionalities which are provided to build dynamic web pages and use the javascript and interactive applications.
+These apis are the part of the browser implementation of the web standards and they enable javascript to interact with system sources.
+The popular web apis are:-
+Dom
+setTimeout
+console
+Fetch
+Local Storage
+Location
+
+These all apis are contained in the window object which is a global object 
+
+
+🎖️🎖️   The Event loop checks whether any functions or callbacks are present in the call back queue or not if present then it will bring back those
+        functions int the call stack again for their execution.
+
+Event Loop handles the microtask queue and callback queue and the microtask queue has more priority than the callback queue 
+Networking calls and the promises come into the microtask queue.
+
+
