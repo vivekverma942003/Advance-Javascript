@@ -3,3 +3,133 @@ A callback function is a function that is passed as an argument to another funct
 time after a certain operation or event has occurred. Callback functions are commonly used to handle
 asynchronous operations, events, or customizable behavior in programs.
 
+Example 1:- 
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout callback");
+}, 0);
+
+Promise.resolve().then(() => console.log("Promise callback"));
+
+console.log("End");
+                                                                        OutPut =Start
+                                                                                End
+                                                                                Promise callback
+                                                                                Timeout callback
+
+**********************************************Expalanation*****************************************
+The Promise callback is executed before the setTimeout callback because promises use the microtask queue, 
+which has higher priority than the macrotask queue used by setTimeout.
+
+
+Example 2 :-********************************
+ function first(callback) {
+  console.log("First");
+  callback();
+}
+
+function second() {
+  console.log("Second");
+}
+
+first(() => {
+  second();
+  console.log("Third");
+});
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 💻💻= first second third
+
+
+example 3 :- 
+const arr = [1, 2, 3, 4];
+
+arr.forEach((num, index) => {
+  if (index === 2) arr.push(5);
+  console.log(num);
+});
+
+console.log(arr);
+
+Output = 1,2,3,4  [1,2,3,4,5];
+
+
+Example 4:
+function outer(callback) {
+  console.log("Outer Start");
+  callback();
+  console.log("Outer End");
+}
+
+outer(() => {
+  console.log("Inner Callback");
+  outer(() => {
+    console.log("Nested Inner Callback");
+  });
+});
+
+output :-
+Outer Start
+Inner Callback
+Outer Start
+Nested Inner Callback
+Outer End
+Outer End
+
+
+Example 5 :-
+setTimeout(() => {
+  console.log("Timeout 1");
+  Promise.resolve().then(() => console.log("Promise in Timeout"));
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise 1");
+  setTimeout(() => console.log("Timeout in Promise"), 0);
+});
+
+console.log("End");
+
+Output:-
+End
+Promise 1
+Timeout 1
+Promise in Timeout
+Timeout in Promise
+
+
+
+Example 6
+function a(callback) {
+  console.log("a");
+  callback();
+}
+
+function b(callback) {
+  console.log("b");
+  callback();
+}
+
+function c() {
+  console.log("c");
+}
+
+a(() => b(() => c()));
+
+OUTPUT = a b c
+
+😫😪😪😪 Worst Example
+
+const obj = {
+  value: 42,
+  method(callback) {
+    callback();
+  },
+};
+
+obj.method(function () {
+  console.log(this.value);
+});
+
+
+    
