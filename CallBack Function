@@ -1,0 +1,5 @@
+CallBack functions 
+A callback function is a function that is passed as an argument to another function, which is then invoked at a later
+time after a certain operation or event has occurred. Callback functions are commonly used to handle
+asynchronous operations, events, or customizable behavior in programs.
+
