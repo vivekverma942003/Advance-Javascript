@@ -1,0 +1,95 @@
+A function bind together with its lexical scope bundled together is called closure.
+simply Function apne aas pass k lexical scope ko yaad rakhte h jaha se wo aaye h loyal hote h 
+
+************************EXAMPLE******************
+function parent(){
+    var name ="Vivek";
+    
+    function child(){
+        console.log(name);
+    }
+    return child;
+}
+let z = parent();
+z();
+
+
+
+***************************🎖️🎖️*********************
+function parent(){
+    var name ="Vivek";
+    
+    function child(){
+        console.log(name);
+    }
+    return child();
+}
+parent()
+
+
+*********************SetTimeout******************************
+function x(){
+    for(var i=1; i<=5; i++){
+        setTimeout(function(){
+            console.log(i);
+        },i*1000)
+    }
+    console.log("vivek kumar verma");
+}
+
+x()
+*************OUTPUT********************* = Vivek Kumar Verma 6 6 6 6 6 6 
+Explanation = When we are using the var variable then it referes to the same variable while executing the setTimeout function 
+    
+
+🎖️🎖️🎖️ settimeout ***********************with let variable behaves differently
+
+function x(){
+    for(var i=1; i<=5; i++){
+        setTimeout(function(){
+            console.log(i);
+        },i*1000)
+    }
+    console.log("vivek kumar verma");
+}
+
+x()
+
+Output = vivek kumar verma 1 2 3 4 5 6
+
+Explanation = when we are using the let varibale then with each iteration it creates a new copy of the i variable which is passed to the setTimeout function
+
+
+
+
+🧑‍💻🧑‍💻🧑‍💻 Var variable with the same output because of the closure formation 
+function x(){
+    for(var i=1; i<=5; i++){
+        setTimeout(function(){
+            console.log(i);
+        },i*1000)
+    }
+    console.log("vivek kumar verma");
+}
+
+x()
+
+OUTPUT= same as the let variable == vivek kumar verma 1 2 3 4 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
