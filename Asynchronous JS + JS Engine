@@ -18,4 +18,7 @@ These all apis are contained in the window object which is a global object
 Event Loop handles the microtask queue and callback queue and the microtask queue has more priority than the callback queue 
 Networking calls and the promises come into the microtask queue.
 
+Every browser has its own javascript engine which is used by the browser to compile the javscript in the browser . Javascript is considered to be the interpreted and compiled 
+compiled language both .Earlier it was fully interpreted language but after that it uses both the interpreter and compiler to execute the code
+
 
