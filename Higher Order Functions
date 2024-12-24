@@ -1,0 +1,13 @@
+Higher Order Functions:-
+
+The functions which takes a function as an arguement and returns a function as the output which increases the reusability of the code and understanding the code.
+******************************8
+
+const numbers = [1, 2, 3, 4];
+
+const squared = numbers.map((num) => num * num);
+console.log(squared); // [1, 4, 9, 16]
+
+
+***********************************************
+
