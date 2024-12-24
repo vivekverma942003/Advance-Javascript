@@ -1,0 +1,77 @@
+Promises in javascript 
+ 
+Promises in javascript comes with only three properties 
+1. Prototype:Promise
+2. PromiseState :"fulfilled/pending"
+3. PromiseResult: Response
+
+Definition :- A promise object represents the eventual completion or failure of
+an asynchronous operation and its resulting value
+
+😪🎆🎆 Promise ek object container h jo future value ko store krne k liye use 
+hota h creation k time use value unknown hoti h but after some time it gets 
+some value to add in it.
+
+
+*****************************************************************************
+Creating our own promises in javascript.
+
+
+                const cart=["apple","banana","orange","lichi"];
+
+                const promise= createOrder(cart);
+
+                promise.then((e)=>{             
+                    console.log("Ordered created successfully Now proceed to payment")
+                })
+                function ValidateCard(cart){
+                    if(cart.length>2){
+                        return false;
+                    }
+                    return true;
+                
+                }
+                function createOrder(cart){
+                
+                    const pr= new Promise(function(resolve,reject){
+                        if(!ValidateCard(cart)){
+                            const err= new Error("This is the create order error")
+                            reject(err);
+                        }
+                        const orderId="12345"
+                        if(orderId){
+                            resolve("This order is created successfully");
+                        }
+                    })
+                    return pr;
+                } 
+
+
+****************************************************************************
+
+
+Promise constructor ek function leta h jisme do function resolve aur reject pass
+hote h jo certain condition pe resolve ya reject hote h 
+
+
+
+
+
+
+
+
+
+
+Explanation :- Agar catch function laga dete h to error catch kr lega aur aage 
+jitne bhi promises honge un sbko execute karwa dega
+jb tak catch nhi ata tb agar catch wale function me error aaega to aage k promises
+run nhi honge 
+
+
+
+
+
+
+
+
+
