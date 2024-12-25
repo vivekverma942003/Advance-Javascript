@@ -1,0 +1,5 @@
+Asycnc Functions = The functions that return always a promise  not a value
+The handle the asynchronous operation efficiently and readily
+
+Normal functions use promises to handle the asynchronous operation but async 
+functions uses await keyword to handle the asynchronous promises
