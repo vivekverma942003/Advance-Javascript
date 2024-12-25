@@ -2,4 +2,95 @@ Asycnc Functions = The functions that return always a promise  not a value
 The handle the asynchronous operation efficiently and readily
 
 Normal functions use promises to handle the asynchronous operation but async 
-functions uses await keyword to handle the asynchronous promises
+functions uses await keyword to handle the asynchronous promises.
+
+Here the async fucnction return the promise without wrapping in any promise class.
+      	async function getData(){
+          return "Namastey Js";
+	}
+	const data=getData();
+	data.then(res=>console.log(res));
+
+**********************************************************
+
+We can also return a promise inside the async function easily.
+const p= new Promise((resolve,reject)=>{
+    resolve("The promise is called inside the promise function");
+})
+
+async function getData(){
+    return p;
+}
+const data=getData();
+console.log(data)
+data.then(res=>console.log(res));
+
+*********************************************************************
+Why we use async/awaitt    || Need of the async await function n
+The async function uses await keyword instead of .then method to take the value
+
+	const p= new Promise((resolve,reject)=>{
+    		resolve("The promise is called inside the promise function");
+	})
+	async function getData(){           
+    		var value=await p;
+    		console.log(value);
+	}
+	getData()
+
+	// Normal function
+ 	function Transfer(){
+   		 return p;
+	 }
+ 	const data=Transfer();
+ 	data.then(res=>console.log(res));
+
+****************************************************************************
+Difference between the await and .then is that js engine actually appears to be waiting
+for the promise to be resolved before executing the codes of the next line
+while .then does not waits it acctually executes the codes
+
+const p= new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("This is the first promise ");
+    },6000)
+})
+
+const getPromise=async()=>{
+    const value=await p;
+    console.log("this is called after promise");
+    
+}
+
+const getp=()=>{
+    const value=p;
+    console.log("This is the value in the normal function");
+    value.then((res)=>console.log(res));
+}
+getPromise()
+getp()
+
+
+
+getPromise() :- It prints the "This is called after the promise" after 6 sec
+where as getp():- It prints the "This is the value in the normal function" 
+Quickly as the code runs
+
+Logic :- When a function gets the await keyword then it suspends the execution
+of that function till the promise is not resolved while executing the other functions
+in the js engine
+
+
+Error Handling  in async await code :-
+Always use try{} and catch(err) when you are using async await function
+
+
+
+
+
+
+
+
+
+
+
