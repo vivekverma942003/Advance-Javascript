@@ -1,0 +1,18 @@
+
+1.
+IIFE :-Immediately Invokes Function Execution 
+This is the function gets executed when it is defined it always created inside a parenthesis and called after there.
+The main goal of this function is to reduce the disturbances from the outer variable 
+
+(()=>{
+    console.log("This is the arrow iife function")
+})();
+*******************************************Important*********************
+It is very important to use semicolon when you are using two iife functions 
+(function name(){
+    console.log("This is the name function");
+})()
+
+
+2.
+
