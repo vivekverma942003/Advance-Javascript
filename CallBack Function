@@ -6,7 +6,7 @@ asynchronous operations, events, or customizable behavior in programs.
 Example 1:- 
 console.log("Start");
 
-setTimeout(() => {
+setTimeout(() => { 
   console.log("Timeout callback");
 }, 0);
 
