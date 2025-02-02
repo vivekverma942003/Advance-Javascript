@@ -1,0 +1,61 @@
+Shallow Copy: Creates a new object or array but only copies the references for nested objects.
+Changes to nested objects in the copied version will affect the original.
+
+const employee = {
+  name: "Alice",
+  role: "Developer",
+  skills: ["JavaScript", "React"],
+};
+
+// Shallow copy using Object.assign
+const shallowCopy = Object.assign({}, employee);
+
+// Shallow copy using spread operator
+// const shallowCopy = { ...employee };
+
+// Modify the nested array in the copy
+shallowCopy.skills.push("Node.js");
+
+console.log("Original:", employee.skills); // ["JavaScript", "React", "Node.js"]
+console.log("Copy:", shallowCopy.skills); // ["JavaScript", "React", "Node.js"]
+
+
+Deep Copy: Creates a completely new object or array, including recursively copying all nested objects. 
+Changes to the copy do not affect the original.
+For deep copies, we recursively copy all nested properties. Here’s how we can deeply copy the same employee object.
+
+Method 1: JSON Methods
+const deepCopy = JSON.parse(JSON.stringify(employee));
+
+// Modify the nested array in the copy
+deepCopy.skills.push("TypeScript");
+
+console.log("Original:", employee.skills); // ["JavaScript", "React"]
+console.log("Copy:", deepCopy.skills); // ["JavaScript", "React", "TypeScript"]
+
+
+
+Method 2: Using Lodash's cloneDeep (Popular Library)
+
+// npm install lodash
+const _ = require("lodash");
+
+const deepCopy = _.cloneDeep(employee);
+
+// Modify the nested array in the copy
+deepCopy.skills.push("Angular");
+
+console.log("Original:", employee.skills); // ["JavaScript", "React"]
+console.log("Copy:", deepCopy.skills); // ["JavaScript", "React", "Angular"]
+
+
+
+
+
+
+
+
+Best Practices
+Use shallow copies for simple objects without nested structures.
+Use deep copies for complex objects with nested or mutable data structures.
+Use libraries like Lodash for reliable deep copying in real-world applications.
