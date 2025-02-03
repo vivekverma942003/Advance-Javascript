@@ -1,0 +1,56 @@
+<div class="workout-list">
+    <h2>Workout List</h2>
+  
+    <!-- Search input -->
+     <div class="container">
+    <input 
+      type="text" 
+      [(ngModel)]="searchQuery" 
+      (input)="onSearchChange()" 
+      placeholder="Search by name"
+    >
+  
+    <!-- Workout type filter -->
+    <select [(ngModel)]="selectedType" (change)="onFilterChange()">
+      <option *ngFor="let type of workoutTypes" [value]="type">{{ type }}</option>
+    </select>
+</div>
+  
+    <!-- Table displaying workout list -->
+    <table mat-table [dataSource]="getPageWorkouts()" class="mat-elevation-z8">
+      <!-- User Name Column -->
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef>User Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.userName }}</td>
+      </ng-container>
+  
+      <!-- Workout Type Column -->
+      <ng-container matColumnDef="workoutType">
+        <th mat-header-cell *matHeaderCellDef>Workout Type</th>
+        <td mat-cell *matCellDef="let element">{{ element.workoutType }}</td>
+      </ng-container>
+  
+      <!-- Workout Minutes Column -->
+      <ng-container matColumnDef="noOfworkout">
+        <th mat-header-cell *matHeaderCellDef>No Of Workouts</th>
+        <td mat-cell *matCellDef="let element">{{ element.noOfworkout }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="workoutMinutes">
+        <th mat-header-cell *matHeaderCellDef>Workout Minutes</th>
+        <td mat-cell *matCellDef="let element">{{ element.workoutMinutes }}</td>
+      </ng-container>
+  
+      <!-- Table Headers and Rows -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <!-- Pagination Controls -->
+    <mat-paginator 
+      [length]="filteredWorkouts.length" 
+      [pageSize]="pageSize" 
+      (page)="paginate($event)">
+    </mat-paginator>
+</div>
+  
