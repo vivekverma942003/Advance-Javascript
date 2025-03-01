@@ -2,6 +2,21 @@
 🎖️🎖️Bind():-The bind method is used to create a new function when that new function
  when called it refers to the this keyword for the first arguement and other arguements are passed to the function 
 
+
+Bind method ka use karte h taki extra arguements dene pe function run kar jaye aur extra arguements ko this keyword se access
+karte h mtlb arguement kcch bhi ho wo this keyword me chala jata h aur hm use access kar lete h .
+Bind method event handling k liye use hota h aur ye immediate execute nhi hota h .
+
+const info=["vishal","Btech"];
+function print(name,course){
+    console.log(this[0] +" " + this[1])
+    console.log("\n");
+    console.log("my name is "+ name + "course is "+course);
+}
+const data= print.bind(info,"vivek","medical");
+data();
+
+
 💻💻
 bind(thisArg, arg1, arg2, /* …, */ argN)
 🧑‍💻🧑‍💻 let info={
@@ -11,7 +26,6 @@ bind(thisArg, arg1, arg2, /* …, */ argN)
 This is the parent function
 function printname(name, course){
     console.log(this.name +" my course is " + this.course);
-    
     console.log(name+ " my new course is "+this.course);
 }
 
@@ -90,4 +104,7 @@ example code :-
 }
 const args = [1, 2, 3];
 console.log(sum.apply(null, args)); // Output: 6
+
+the only difference between the call and apply is that we pass the arguements individually in call method but passes as an 
+array in apply method
 
