@@ -43,6 +43,8 @@ var bar = function () {
 
   Output= Hi
 
+****************************************************************************************************************************
+
 Example 3 :-   var a = 5;
               function test() {
                 console.log(a);
@@ -50,6 +52,21 @@ Example 3 :-   var a = 5;
             }
             test();
 Output:= undefined
+
+
+What is Variable Shadowing?
+When a variable is declared in an inner scope (like a function), it shadows any variable with the same name in an outer scope (e.g., the global scope).
+As a result, the inner variable is used within the inner scope, and the outer variable is not accessible there.
+
+
+
+
+
+****************************************************************************************************************************
+
+
+
+
 
 Example 4 var a = 1;
 function test() {
