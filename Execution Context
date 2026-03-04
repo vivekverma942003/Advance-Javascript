@@ -1,0 +1,15 @@
+Execution Context is the environment where JavaScript code is evaluated and executed.
+There are three Execution context :-
+1. Global Execution Context (GEC): This is the default context. It creates two things for you: the window object (in browsers) and the this keyword.
+                                   There is only one GEC in a program.
+
+2. Function Execution Context (FEC): Created every time a function is invoked (called), not when it is defined. Each function call gets its own unique context.
+3. Eval Execution Context: Created inside an eval function (rarely used due to security risks).
+
+
+There are two phases of the execution context:-
+Memory Creation Phase (Creation Phase) 
+Code Execution Phase
+
+For Every function call or function invokation a new context execution is created 
+
