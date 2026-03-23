@@ -22,3 +22,5 @@ Every browser has its own javascript engine which is used by the browser to comp
 compiled language both .Earlier it was fully interpreted language but after that it uses both the interpreter and compiler to execute the code
 
 
+console.log(window): to get alll the web api
+
