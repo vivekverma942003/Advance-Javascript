@@ -25,4 +25,6 @@ const roots = numbers.map((num) => Math.sqrt(num));
       const binarynum= num.map(binary);
 
       console.log(binarynum)
-  
+
+
+NOTE:- map function does not copies the deep nested elements it stores their reference ;
